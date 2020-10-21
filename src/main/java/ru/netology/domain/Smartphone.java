@@ -2,10 +2,12 @@ package ru.netology.domain;
 
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 public class Smartphone extends Product {
     private String manufacturer;
 
@@ -13,5 +15,10 @@ public class Smartphone extends Product {
         super(id, name, price);
         this.manufacturer = manufacturer;
     }
-
+    public boolean matches(String search) {
+        if (super.matches(search)) {
+            return true;
+        }
+        return this.manufacturer.equalsIgnoreCase(search);
+    }
 }
