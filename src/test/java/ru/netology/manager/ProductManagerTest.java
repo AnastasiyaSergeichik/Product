@@ -77,11 +77,4 @@ public class ProductManagerTest {
 
         assertArrayEquals(expected, actual);
     }
-
-    @Test
-    void shouldAddProduct() {
-        manager = new ProductManager(repository);
-        manager.add(book2);
-        manager.add(phone4);
-    }
 }
