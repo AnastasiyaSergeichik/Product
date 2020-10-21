@@ -20,8 +20,6 @@ public class ProductManagerTest {
     private Product phone2 = new Smartphone(5, "Galaxy Note", 67988, "Sumsung");
     private Product phone3 = new Smartphone(8, "iPhone 11", 51750, "Apple");
     private Product phone4 = new Smartphone(4, "Nokia 5.3 4", 13220, "Nokia");
-    private Product product1 = new Product(10, "None", 10);
-    private Product product2 = new Product(15, "None1", 100);
 
     @BeforeEach
     public void setUp() {
@@ -32,8 +30,6 @@ public class ProductManagerTest {
         manager.add(phone2);
         manager.add(phone3);
         manager.add(phone4);
-        manager.add(product1);
-        manager.add(product2);
     }
 
     @Test
@@ -65,16 +61,7 @@ public class ProductManagerTest {
         Product[] actual = manager.searchBy("Sumsung");
         Product[] expected = new Product[]{phone1, phone2};
 
-
         assertArrayEquals(expected, actual);
 
-    }
-
-    @Test
-    void shouldFindByNotFoundProduct() {
-        Product[] actual = manager.searchBy("Alcatel");
-        Product[] expected = new Product[0];
-
-        assertArrayEquals(expected, actual);
     }
 }
