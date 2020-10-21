@@ -13,8 +13,6 @@ public class ProductTest {
     private Product phone2 = new Smartphone(5, "Galaxy Note", 67988, "Sumsung");
     private Product phone3 = new Smartphone(8, "iPhone 11", 51750, "Apple");
     private Product phone4 = new Smartphone(4, "Nokia 5.3 4", 13220, "Nokia");
-    private Product product1 = new Product(10, "None", 10);
-    private Product product2 = new Product(15, "None1", 100);
 
     @Test
     public void searchBookNameMatch (){
@@ -54,16 +52,6 @@ assertTrue (actual);
     @Test
     public void searchSmartphoneManufacturerNotMatch (){
         boolean actual = phone4.matches("Sumsung");
-        assertFalse (actual);
-    }
-    @Test
-    public void searchProductNameMatch (){
-        boolean actual = product1.matches("None");
-        assertTrue (actual);
-    }
-    @Test
-    public void searchProductNameNotMatch (){
-        boolean actual = product2.matches("None");
         assertFalse (actual);
     }
 }
