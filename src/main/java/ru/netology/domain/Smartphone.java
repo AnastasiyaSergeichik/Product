@@ -1,6 +1,5 @@
 package ru.netology.domain;
 
-
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
